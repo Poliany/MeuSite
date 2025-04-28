@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins as PoppinsFont } from "next/font/google"; // Corrigi aqui
 import "./globals.css";
+
+// Agora a variável se chama poppins, com letra minúscula
+const poppins = PoppinsFont({
+  weight: ["300", "400", "600"],
+  subsets: ["latin"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} antialiased`}
       >
         {children}
       </body>
