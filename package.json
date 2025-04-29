@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^14.2.15",
     "aos": "^2.3.4",
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.503.0",

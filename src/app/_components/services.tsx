@@ -8,7 +8,7 @@ import Link from "next/link";
 export function Services() {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
-  const photos = ["/brasileiro.jpg", "/foto2.jpg", "/foto3.jpg"];
+  const photos = ["/brasileiro.jpg"];
 
   function prevSlide() {
     emblaApi?.scrollPrev();
