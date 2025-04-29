@@ -16,21 +16,18 @@ const services = [
     description:
       "Método de extensão de cílios que oferece um efeito mais natural, mas com volume e curvatura personalizados para cada cliente. Ideal para quem deseja um olhar mais suave, mas com definição.",
     duration: "1h 30min",
-    price: "$100",
   },
   {
     title: "Método Clássico",
     description:
       "Extensão de cílios individual com um fio de extensão aplicado em cada cílio natural. Ideal para quem busca um look mais sutil e alongado, mas com maior definição.",
     duration: "1h 30min",
-    price: "$80",
   },
   {
     title: "Refil de Cílios",
     description:
       "Serviço de manutenção para retoque da extensão de cílios, ideal para quem já realizou o procedimento anteriormente e precisa manter o volume e o formato.",
     duration: "1h",
-    price: "$70",
   },
 ];
 
@@ -67,7 +64,7 @@ export function Services() {
                   key={index}
                   className="flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(100%/3)] px-3"
                 >
-                  <article className="bg-[#1e293b] text-white rounded-2xl p-6 space-y-4 h-full flex flex-col">
+                  <article className="bg-yellow-700 text-white rounded-2xl p-6 space-y-4 h-full flex flex-col shadow-lg shadow-xl cursor-pointer">
                     <div className="flex-1 flex items-start justify-between">
                       <div>
                         <h3 className="font-bold text-xl my-1">{item.title}</h3>
@@ -100,7 +97,7 @@ export function Services() {
 
           <button
             title="Deslizar para a direita"
-            className="bg-white flex items-center justify-center rounded-full shadow-lg w-10 h-10 absolute -right-6 -translate-y-1/2 -translate-x-1/2 top-1/2 z-10"
+            className="bg-white flex items-center justify-center rounded-full shadow-lg w-10 h-10 absolute -right-6 -translate-y-1/2 -translate-x-1/2 top-1/2 z-10 "
             onClick={scrollNext}
           >
             <ChevronRight className="w-6 h-6 text-gray-600" />

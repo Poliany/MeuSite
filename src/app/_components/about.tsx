@@ -2,48 +2,59 @@
 
 import Image from "next/image";
 import freepik from "../../../public/freepik.png";
-import { Check } from "lucide-react";
 import whatsApp from "../../../public/whatsApp.png";
-
+import { Check } from "lucide-react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
 export function About() {
-  return (
-    <section className="bg-white-700 py-16">
-      <div className="container mx-auto grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {" "}
-        {/*essa div esta com as duas fotos dentro*/}
-        <div className="relative space-y-6">
-          {/*div pai*/}
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    slides: {
+      perView: 1,
+    },
+  });
 
-          <div className="relative w-full h-[500px] rounded-3xl overflow-hidden">
-            {" "}
-            {/*foto1*/}
-            <Image
-              src={freepik}
-              alt="Freepik"
-              fill
-              quality={100}
-              className="object-cover hover:scale-110 duration-300"
-              priority
-            />
+  const sliderImages = ["/freepik.png", "/fio.jpg", "/mega.jpg", "/egi.jpg" ]; // Exemplo, troque pelas suas imagens
+
+  return (
+    <section className="bg-white py-16">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        {/* Slide e imagem extra */}
+        <div className="relative space-y-6">
+          {/* Slide */}
+          <div
+            ref={sliderRef}
+            className="keen-slider relative w-full h-[500px] rounded-3xl overflow-hidden cursor-pointer duration-300 hover:scale-110"
+          >
+            {sliderImages.map((src, index) => (
+              <div className="keen-slider__slide relative" key={index}>
+                <Image
+                  src={src}
+                  alt={`Slide ${index + 1}`}
+                  fill
+                  quality={100}
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
 
-          <div className="absolute w-40 h-40 right-8 -bottom-10 border-5 border-yellow-600 rounded-3xl overflow-hidden">
-            {" "}
-            {/*foto2*/}
+          {/* Imagem pequena sobreposta */}
+          <div className="absolute w-40 h-40 right-8 -bottom-10 border-4 border-yellow-600 rounded-3xl overflow-hidden">
             <Image
               src={freepik}
               alt="Freepik"
               quality={100}
               className="object-cover"
-              priority
+              fill
             />
           </div>
         </div>
-        <div className="space-y-4">
-          {/*Conteudos*/}
 
-          <h1 className="text-3xl font-bold">CUIDADOS</h1>
+        {/* Conteúdo ao lado */}
+        <div className="space-y-4 mt-10">
+        <h1 className="text-3xl font-bold">CUIDADOS</h1>
           <p>
             Ao optar pela extensão de cílios, você investe não apenas na beleza
             do seu olhar, mas também na saúde dos seus cílios naturais. Seguir
@@ -57,61 +68,67 @@ export function About() {
           </p>
 
           <p className="font-bold">Pré-Extensão</p>
-
           <ul className="space-y-3">
-            <li className="flex intems-center gap-2">
-              <Check className=" text-pink-600" />
+            <li className="flex items-center gap-2">
+              <Check className="text-pink-600" />
               Cílios totalmente limpos, sem maquiagem ou cremes.
             </li>
-            <li className="flex intems-center gap-2">
-              <Check className=" text-pink-600" />
-              Evite usar curvex ou máscara de cílios no dia da aplicação..
+            <li className="flex items-center gap-2">
+              <Check className="text-pink-600" />
+              Evite usar curvex ou máscara de cílios no dia da aplicação.
             </li>
-            <li className="flex intems-center gap-2">
-              <Check className=" text-pink-600" />
-              Higienize seus cílios com um shampoo apropriado no dia anterior..
+            <li className="flex items-center gap-2">
+              <Check className="text-pink-600" />
+              Higienize seus cílios com um shampoo apropriado no dia anterior.
             </li>
-            <li className="flex intems-center gap-2">
-              <Check className=" text-pink-600" />
-              Evite consumir café ou estimulantes antes do procedimento..
+            <li className="flex items-center gap-2">
+              <Check className="text-pink-600" />
+              Evite consumir café ou estimulantes antes do procedimento.
             </li>
           </ul>
 
           <p className="font-bold">Pós-Extensão</p>
-
           <ul className="space-y-3">
-            <li className="flex intems-center gap-2">
-              <Check className=" text-pink-600" />
+            <li className="flex items-center gap-2">
+              <Check className="text-pink-600" />
               Não frequente saunas ou ambientes com vapor nos primeiros dias.
             </li>
-            <li className="flex intems-center gap-2">
-              <Check className=" text-pink-600" />
-              Evite esfregar os olhos ou puxar as extensões...
+            <li className="flex items-center gap-2">
+              <Check className="text-pink-600" />
+              Evite esfregar os olhos ou puxar as extensões.
             </li>
-            <li className="flex intems-center gap-2">
-              <Check className=" text-pink-600" />
-              Não use máscara de cílios..
+            <li className="flex items-center gap-2">
+              <Check className="text-pink-600" />
+              Não use máscara de cílios.
             </li>
-            <li className="flex intems-center gap-2">
-              <Check className=" text-pink-600" />
-              Higienize suavemente os cílios diariamente com produtos
-              adequados..
+            <li className="flex items-center gap-2">
+              <Check className="text-pink-600" />
+              Higienize suavemente os cílios diariamente com produtos adequados.
             </li>
-            <li className="flex intems-center gap-2">
-              <Check className=" text-pink-600" />
-              Faça manutenções periódicas a cada 2-3 semanas..
+            <li className="flex items-center gap-2">
+              <Check className="text-pink-600" />
+              Faça manutenções periódicas a cada 2-3 semanas.
             </li>
           </ul>
-        </div>
-        <div className="items-center flex flex-col gap-5 mt-8">
-          <Image
-            src={whatsApp} //QR Code
-            alt="QR Code para WhatsApp"
-            width={80}
-            height={80}
-            className="rounded-md hover:scale-110 duration-300"
-          />
-          <span className="font-bold text-green-500">WhatsApp</span>
+
+          {/* WhatsApp */}
+          <div className="flex flex-col gap-5 mt-8 py-3">
+            <Image
+              src={whatsApp}
+              alt="QR Code para WhatsApp"
+              width={80}
+              height={80}
+              className="rounded-md hover:scale-110 duration-300 cursor-pointer"
+              onClick={() =>
+                window.open(
+                  "https://wa.me/5511984282343?text=Olá%2C%20gostaria%20de%20agendar%20meu%20horário.",
+                  "_blank"
+                )
+              }
+            />
+            <span className="font-bold text-green-500">WhatsApp</span>
+            
+          </div>
         </div>
       </div>
     </section>

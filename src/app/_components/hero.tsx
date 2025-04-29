@@ -51,11 +51,12 @@ export function Hero() {
               data-aos-delay="500"
             >
               <a
-                href="#"
-                className="bg-rose-300 font-semibold px-4 py-2 rounded-3xl text-gray-700 flex items-center justify-center w-fit gap-2"
+                href="https://wa.me/5511984282343?text=Olá%2C%20gostaria%20de%20agendar%20meu%20horário."
+                className="bg-green-600 font-semibold px-4 py-2 rounded-3xl text-white flex items-center justify-center w-fit gap-2 transition duration-300 ease-in-out hover:shadow-[0_0_12px_rgba(255,255,255,0.5)] hover:scale-105"
               >
-                Agende seu Horário
+                WhatsApp
               </a>
+              <p className="py-2 text-gray-500 gap-2">Agende seu Horário</p>
             </div>
           </div>
 
