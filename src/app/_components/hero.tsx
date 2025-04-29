@@ -28,10 +28,16 @@ export function Hero() {
             <h1
               className="text-3xl md:text-4xl lg:text-5xl leading-10"
               data-aos="fade-down"
+              data-aos-duration="1000"
             >
               Lash Perfection!
             </h1>
-            <p className="lg:text-lg" data-aos="fade-right">
+            <p
+              className="lg:text-lg"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="300"
+            >
               Realce sua beleza natural com um toque de elegância. <br />
               Na MyLASH, cada extensão de cílios é feita com delicadeza e
               atenção a cada detalhe. <br />
@@ -39,7 +45,11 @@ export function Hero() {
             </p>
 
             {/* Botão de agendamento */}
-            <div>
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              data-aos-delay="500"
+            >
               <a
                 href="#"
                 className="bg-rose-300 font-semibold px-4 py-2 rounded-3xl text-gray-700 flex items-center justify-center w-fit gap-2"
@@ -50,7 +60,12 @@ export function Hero() {
           </div>
 
           {/* Imagem da MyLASH */}
-          <div className="hidden md:block h-full relative">
+          <div
+            className="hidden md:block h-full relative"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
             <Image
               src={mylash}
               alt="mylash"

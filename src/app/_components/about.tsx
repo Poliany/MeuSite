@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import freepik from "../../../public/freepik.png";
 import { Check } from "lucide-react";
 import whatsApp from "../../../public/whatsApp.png";
+
 
 export function About() {
   return (
