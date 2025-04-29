@@ -1,81 +1,112 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, Heart, Eye } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import Image from "next/image";
-import Link from "next/link";
+import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
+
+const services = [
+  {
+    title: "Método Russo",
+    description:
+      "Extensão de cílios com o efeito volumoso, ideal para quem deseja um olhar mais dramático e impactante. Com a técnica de volume 3D a 6D, é possível criar cílios mais densos e volumosos.",
+    duration: "2h",
+    price: "$120",
+  },
+  {
+    title: "Método Brasileiro",
+    description:
+      "Método de extensão de cílios que oferece um efeito mais natural, mas com volume e curvatura personalizados para cada cliente. Ideal para quem deseja um olhar mais suave, mas com definição.",
+    duration: "1h 30min",
+    price: "$100",
+  },
+  {
+    title: "Método Clássico",
+    description:
+      "Extensão de cílios individual com um fio de extensão aplicado em cada cílio natural. Ideal para quem busca um look mais sutil e alongado, mas com maior definição.",
+    duration: "1h 30min",
+    price: "$80",
+  },
+  {
+    title: "Refil de Cílios",
+    description:
+      "Serviço de manutenção para retoque da extensão de cílios, ideal para quem já realizou o procedimento anteriormente e precisa manter o volume e o formato.",
+    duration: "1h",
+    price: "$70",
+  },
+];
 
 export function Services() {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+    slidesToScroll: 1,
+    breakpoints: {
+      "(min-width: 768px)": { slidesToScroll: 3 },
+    },
+  });
 
-  const photos = ["/brasileiro.jpg"];
-
-  function prevSlide() {
+  function scrollPrev() {
     emblaApi?.scrollPrev();
   }
 
-  function nextSlide() {
+  function scrollNext() {
     emblaApi?.scrollNext();
   }
 
   return (
-    <section className="relative w-full max-w-3xl mx-auto py-10">
-      {/* Galeria */}
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {photos.map((src, index) => (
-            <div key={index} className="min-w-full flex justify-center">
-              <div className="w-[70%] h-[160px] relative group overflow-hidden rounded-3xl shadow-sm">
-                {/* Imagem */}
-                <Image
-                  src={src}
-                  alt={`Foto ${index}`}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out rounded-3xl"
-                />
+    <section className="bg-white py-16">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold mb-12">
+          Serviços de Extensão de Cílios
+        </h2>
 
-                {/* Ícones sobre a imagem */}
-                <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20 rounded-3xl">
-                  {/* Coração */}
-                  <button
-                    aria-label="Adicionar aos favoritos"
-                    className="bg-white/80 p-2 rounded-full shadow hover:bg-pink-200 transition-colors"
-                  >
-                    <Heart className="text-pink-500" size={18} />
-                  </button>
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {services.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(100%/3)] px-3"
+                >
+                  <article className="bg-[#1e293b] text-white rounded-2xl p-6 space-y-4 h-full flex flex-col">
+                    <div className="flex-1 flex items-start justify-between">
+                      <div>
+                        <h3 className="font-bold text-xl my-1">{item.title}</h3>
+                        <p className="text-gray-400 text-sm select-none">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
 
-                  {/* Ver detalhes */}
-                  <Link href={`/galeria/${index}`}>
-                    <button
-                      aria-label={`Ver detalhes da foto ${index}`}
-                      className="bg-white/80 p-2 rounded-full shadow hover:bg-blue-200 transition-colors"
-                    >
-                      <Eye className="text-blue-500" size={18} />
-                    </button>
-                  </Link>
+                    <div className="border-t border-gray-700 pt-4 flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-sm">
+                        <Clock className="w-4 h-4" />
+                        <span>{item.duration}</span>
+                      </div>
+                      <div className="text-sm font-semibold">{item.price}</div>
+                    </div>
+                  </article>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <button
+            title="Deslizar para a esquerda"
+            className="bg-white flex items-center justify-center rounded-full shadow-lg w-10 h-10 absolute left-3 -translate-y-1/2 -translate-x-1/2 top-1/2 z-10"
+            onClick={scrollPrev}
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-600" />
+          </button>
+
+          <button
+            title="Deslizar para a direita"
+            className="bg-white flex items-center justify-center rounded-full shadow-lg w-10 h-10 absolute -right-6 -translate-y-1/2 -translate-x-1/2 top-1/2 z-10"
+            onClick={scrollNext}
+          >
+            <ChevronRight className="w-6 h-6 text-gray-600" />
+          </button>
         </div>
       </div>
-
-      {/* Botões de navegação */}
-      <button
-        onClick={prevSlide}
-        aria-label="Anterior"
-        className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-sm hover:bg-gray-300 transition-colors"
-      >
-        <ChevronLeft size={18} />
-      </button>
-
-      <button
-        onClick={nextSlide}
-        aria-label="Próximo"
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-sm hover:bg-gray-300 transition-colors"
-      >
-        <ChevronRight size={18} />
-      </button>
     </section>
   );
 }
