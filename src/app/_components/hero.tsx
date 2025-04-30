@@ -33,7 +33,7 @@ export function Hero() {
               Lash Perfection!
             </h1>
             <p
-              className="lg:text-lg"
+              className="lg:text-base"
               data-aos="fade-right"
               data-aos-duration="1000"
               data-aos-delay="300"
@@ -53,6 +53,7 @@ export function Hero() {
               <a
                 href="https://wa.me/5511984282343?text=Olá%2C%20gostaria%20de%20agendar%20meu%20horário."
                 className="bg-green-600 font-semibold px-4 py-2 rounded-3xl text-white flex items-center justify-center w-fit gap-2 transition duration-300 ease-in-out hover:shadow-[0_0_12px_rgba(255,255,255,0.5)] hover:scale-105"
+                aria-label="Agendar horário no WhatsApp"
               >
                 WhatsApp
               </a>

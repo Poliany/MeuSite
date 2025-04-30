@@ -9,7 +9,6 @@ const services = [
     description:
       "Extensão de cílios com o efeito volumoso, ideal para quem deseja um olhar mais dramático e impactante. Com a técnica de volume 3D a 6D, é possível criar cílios mais densos e volumosos.",
     duration: "2h",
-    price: "$120",
   },
   {
     title: "Método Brasileiro",

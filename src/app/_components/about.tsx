@@ -54,21 +54,17 @@ export function About() {
         {/* Conteúdo ao lado */}
         <div className="space-y-4 mt-10 lg:mt-0">
           <h1 className="text-3xl font-bold">CUIDADOS</h1>
-          <p>
+          <p className="text-sm lg:text-base">
             Ao optar pela extensão de cílios, você investe não apenas na beleza
             do seu olhar, mas também na saúde dos seus cílios naturais. Seguir
             as orientações de pré e pós-procedimento é essencial para garantir a
             durabilidade das extensões, evitar irritações e manter um resultado
-            bonito e seguro. Cuidar dos cílios antes da aplicação prepara a base
-            perfeita para a fixação dos fios, enquanto o cuidado após o
-            procedimento prolonga a vida útil das extensões e preserva seus
-            cílios naturais. Dedicar atenção a esses pequenos detalhes faz toda
-            a diferença na qualidade do seu resultado final.
+            bonito e seguro.
           </p>
 
           <p className="font-bold">Pré-Extensão</p>
-          <ul className="space-y-3">
-            <li className="flex items-center gap-2">
+          <ul className="space-y-3 text-sm lg:text-base">
+            <li className="flex items-center gap-2 ">
               <Check className="text-pink-600" />
               Cílios totalmente limpos, sem maquiagem ou cremes.
             </li>
@@ -87,7 +83,7 @@ export function About() {
           </ul>
 
           <p className="font-bold">Pós-Extensão</p>
-          <ul className="space-y-3">
+          <ul className="space-y-3 text-sm lg:text-base">
             <li className="flex items-center gap-2">
               <Check className="text-pink-600" />
               Não frequente saunas ou ambientes com vapor nos primeiros dias.
@@ -111,8 +107,6 @@ export function About() {
           </ul>
         </div>
       </div>
-
-     
     </section>
   );
 }
