@@ -52,7 +52,7 @@ export function Services() {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12">
+        <h2 className="text-3xl font-bold mb-12">
           Serviços de Extensão de Cílios
         </h2>
 
@@ -64,7 +64,7 @@ export function Services() {
                   key={index}
                   className="flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(100%/3)] px-3"
                 >
-                  <article className="bg-yellow-700 text-white rounded-2xl p-6 space-y-4 h-full flex flex-col shadow-lg shadow-xl cursor-pointer">
+                  <article className="bg-[#1e293b] text-white rounded-2xl p-6 space-y-4 h-full flex flex-col shadow-lg shadow-xl cursor-pointer">
                     <div className="flex-1 flex items-start justify-between">
                       <div>
                         <h3 className="font-bold text-xl my-1">{item.title}</h3>

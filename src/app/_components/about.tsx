@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import freepik from "../../../public/freepik.png";
-import whatsApp from "../../../public/whatsApp.png";
 import { Check } from "lucide-react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -15,11 +14,11 @@ export function About() {
     },
   });
 
-  const sliderImages = ["/freepik.png", "/fio.jpg", "/mega.jpg", "/egi.jpg" ]; // Exemplo, troque pelas suas imagens
+  const sliderImages = ["/freepik.png", "/fio.jpg", "/mega.jpg", "/egi.jpg"]; // Exemplo, troque pelas suas imagens
 
   return (
     <section className="bg-white py-16">
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Slide e imagem extra */}
         <div className="relative space-y-6">
           {/* Slide */}
@@ -53,8 +52,8 @@ export function About() {
         </div>
 
         {/* Conteúdo ao lado */}
-        <div className="space-y-4 mt-10">
-        <h1 className="text-3xl font-bold">CUIDADOS</h1>
+        <div className="space-y-4 mt-10 lg:mt-0">
+          <h1 className="text-3xl font-bold">CUIDADOS</h1>
           <p>
             Ao optar pela extensão de cílios, você investe não apenas na beleza
             do seu olhar, mas também na saúde dos seus cílios naturais. Seguir
@@ -110,27 +109,10 @@ export function About() {
               Faça manutenções periódicas a cada 2-3 semanas.
             </li>
           </ul>
-
-          {/* WhatsApp */}
-          <div className="flex flex-col gap-5 mt-8 py-3">
-            <Image
-              src={whatsApp}
-              alt="QR Code para WhatsApp"
-              width={80}
-              height={80}
-              className="rounded-md hover:scale-110 duration-300 cursor-pointer"
-              onClick={() =>
-                window.open(
-                  "https://wa.me/5511984282343?text=Olá%2C%20gostaria%20de%20agendar%20meu%20horário.",
-                  "_blank"
-                )
-              }
-            />
-            <span className="font-bold text-green-500">WhatsApp</span>
-            
-          </div>
         </div>
       </div>
+
+     
     </section>
   );
 }
